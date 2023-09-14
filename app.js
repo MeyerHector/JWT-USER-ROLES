@@ -12,8 +12,8 @@ app.use(helmet())
 app.use(cors())
 app.use(morgan('dev'))
 
-import { conexionDB } from './src/connection/db.js'
-conexionDB()
+import { dbConnection } from './src/connection/db.js'
+dbConnection()
 
 
 // RUTAS

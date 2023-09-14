@@ -1,5 +1,5 @@
 
-import { Sequelize, Model, DataTypes } from 'sequelize'
+import { Sequelize } from 'sequelize'
 
 export const sequelize = new Sequelize(
     process.env.DB_DATABASE,
@@ -11,14 +11,11 @@ export const sequelize = new Sequelize(
     }
 )
 
-export const conexionDB = async () => {
+export async function dbConnection () {
     try {
-        await sequelize.authenticate()
-        console.log('Conexión a la base de datos exitosa')
+      await sequelize.sync({ force: false })
+      console.log('db connection successful')
     } catch (error) {
-        console.log('Error al conectar a la base de datos', error);
+      console.error(error)
     }
-
-}
-
-export { Model, DataTypes}
+  }

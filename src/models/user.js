@@ -1,4 +1,5 @@
-import { sequelize, DataTypes } from "../connection/db.js";
+import { sequelize } from "../connection/db.js";
+import { DataTypes } from "sequelize";
 import { hashString } from '../helpers/hash.js'
 import bcrypt from 'bcrypt'
 
