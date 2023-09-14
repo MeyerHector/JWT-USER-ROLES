@@ -17,8 +17,10 @@ dbConnection()
 
 
 // RUTAS
-
-
+import { userRoutes } from './src/routes/user.routes.js'
+import { authRouter } from './src/routes/auth.routes.js'
+app.use(userRoutes)
+app.use(authRouter)
 
 //
 
